@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "59c79f22-ad28-4d7c-a9b1-26ddfc3d7de1",
+		"name": "Postman Assignment_003",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32313081"
+	},
+	"item": [
+		{
+			"name": "Get Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Validate response status = 200\r",
+							"pm.test(\"Validate response status is 200\", function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"validate Username\",function(){\r",
+							"    var jsonData=pm.response.json();\r",
+							"    pm.expect(jsonData.username).to.eql(\"Uname001\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/Uname001",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Uname001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
